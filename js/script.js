@@ -3,10 +3,22 @@ var burgerName = document.getElementById('name');
 var btn = document.getElementById('button');
 var ingredientsCheck = document.getElementsByClassName('ingredient-checkbox');
 var screenPrice = document.getElementById('price');
+var addCheck = document.getElementsByClassName('ingredient-add'); 
 
 // COUPONS
 var coupon = document.getElementById('coupon');
 var validCoupons = ['123456ABCD', '7890EFGH', '1029384756AZ', '123'];
+
+
+// Clickable span
+for (i = 0; i < addCheck.length; i++) {
+    var addChecked = addCheck[i];
+    addChecked.addEventListener('click', function(){
+        var thisAddCheckbox = this.previousElementSibling;
+        thisAddCheckbox.checked = !thisAddCheckbox.checked;
+    })
+}
+
 
 // CALCULATE ON CLICK
 btn.addEventListener('click', function() {
